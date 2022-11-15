@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(90deg, #b48666, #ecd092);
+    color: rgb(248, 236, 236);
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+header{
+    font-size: 1.5rem;
+}
+header, form{
+    min-height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+form input, form button{
+    padding: 0.2rem;
+    font-size: 2rem;
+    border: none;
+    background: whitesmoke;
+}
+.todo-input{
+    border: none;
+}
+form button{
+    color: #b48666;
+    background: whitesmoke;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+form button:hover{
+    background: #b48666;
+    color: whitesmoke;
+}
+
+/* styling elemnts in js */
+
+ .todo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo-list{
+    min-width: 30%;
+    list-style: none;
+}
+
+.todo{
+    margin: 0.5rem;
+    background: whitesmoke;
+    color: black;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+.todo li{
+    flex: 1;
+}
+.trash-btn, .complete-btn{
+    background: #d18249;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.complete-btn{
+    background: rgb(84, 189, 74);
+} 
+
+ .todo-item{
+    padding: 0 0.5rem;
+} 
+
+
+.fa-trash, .fa-check{
+    pointer-events: none;
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+.fall{
+    transform: translateY(8rem) rotateZ(45deg);
+    opacity: 0;
+}
+ /* ================================== extra css ===================== */
+ .select{
+     margin: 1rem;
+     position: relative;
+     overflow: hidden;
+ }
+ select{
+     width: 10rem;
+     color: #d18249;
+     cursor: pointer;
+     border: none;
+     padding: 0.5rem;
+ }
+ .select::after{
+     content: "\25BC";
+     position: absolute;
+     background: #d18249;
+     top: 0;
+     right: 0;
+     padding: 0.5rem;
+     pointer-events: none;
+     transition: all 0.3s ease ;
+ }
+ .select:hover::after{
+     background: whitesmoke;
+     color: #d18249;
+ }
+
+
+
+
+/* //selectors
+const todoInput = document.querySelector(".todo-input");
+const todoButton = document.querySelector(".todo-button");
+const todoList = document.querySelector(".todo-list");
+
+//Event Listeners
+todoButton.addEventListener("click", addTodo);
+todoList.addEventListener("click", deleteCheck);
+
+//Functions
+function addTodo(event) {
+  //prevent form from submitting
+  event.preventDefault();
+  //todo div
+  const todoDiv = document.createElement("div");
+  todoDiv.classList.add("todo");
+  //create LI
+  const newTodo = document.createElement("li");
+  newTodo.innerText = todoInput.value;
+  newTodo.classList.add("todo-item");
+  todoDiv.appendChild(newTodo);
+
+  //check mark button
+  const completedButton = document.createElement("button");
+  completedButton.innerHTML = '<i class="fas fa-check"></i>';
+  completedButton.classList.add("complete-btn");
+  todoDiv.appendChild(completedButton);
+
+  //Check trash button
+  const trashButton = document.createElement("button");
+  trashButton.innerHTML = '<i class="fas fa-trash"></i>';
+  trashButton.classList.add("trash-btn");
+  todoDiv.appendChild(trashButton);
+  //append to list
+  todoList.appendChild(todoDiv);
+  //clear todo input value;
+  todoInput.value = "";
+}
+
+function deleteCheck(e) {
+  const item = e.target;
+  //delete todo
+  if (item.classList[0] === "trash-btn") {
+    const todo = item.parentElement;
+    todo.remove();
+  }
+  //check Mark
+  if (item.classList[0] === "completed-btn") {
+    const todo = item.parentElement;
+    todo.remove();
+  }
+} */
